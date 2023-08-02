@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    @ViewBag.Partido.nombre
+  </div>
+  <div class="card-body">
+    <img src= @ViewBag.Partido.logo>
+    <p class="card-text">@ViewBag.Partido.sitioWeb</p>
+    <p class="card-text">@ViewBag.Partido.fechaFundacion</p>
+    <p class="card-text">@ViewBag.Partido.cantidadDiputados</p>
+    <p class="card-text">@ViewBag.Partido.cantidadSenadores</p>
+    <a href= '@Url.Action("AgregarCandidato", "Home",  new {idPartido = @ViewBag.Partido.idPartido})' class="btn btn-primary">Agregar Candidato</a>
+  </div>
+</div>
+
+@foreach (Candidato c in ViewBag.ListarCandidatos)
+{
+    <div class="card" style="width: 18rem;">
+        <img src='@c.Foto' class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@c.Nombre @c.Apellido</h5>
+            <a href='@Url.Action("VerDetalleCandidato", "Home",  new {idCandidato = @c.IdCandidato})' class="btn btn-primary">Más Información</a>
+        </div>
+    </div>
+}

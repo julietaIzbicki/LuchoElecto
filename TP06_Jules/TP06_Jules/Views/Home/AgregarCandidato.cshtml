@@ -1,0 +1,32 @@
+<h3>Agregar informacion el candidato</h3>
+<form action='@Url.Action("GuardarCandidato", "Home")' method="post">
+
+    <input type="hidden" name="IdPartido" value=@ViewBag.IdPartido />
+
+    <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" name="Nombre" aria-describedby="inputGroup-sizing-lg">
+
+        <span class="input-group-text" id="inputGroup-sizing-lg">Apellido</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" name="Apellido" aria-describedby="inputGroup-sizing-lg">
+    </div>
+
+    <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Fecha de nacimiento</span>
+        <input type="date" class="form-control" aria-label="Sizing example input" name="FechaNacimiento" aria-describedby="inputGroup-sizing-lg">
+    </div>
+
+    <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Postulacion</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" name="Postulacion" aria-describedby="inputGroup-sizing-lg">
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupFile01">Foto</label>
+        <input type="file" class="form-control" name="Foto" >
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Guardar candidato</button>
+    </div>
+</form>
